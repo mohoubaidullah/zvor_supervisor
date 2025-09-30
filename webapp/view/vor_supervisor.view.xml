@@ -1,0 +1,115 @@
+<mvc:View controllerName="vor.zvor_supervisor.controller.vor_supervisor" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<VBox class="sapUiSmallMargin">
+							<f:SimpleForm id="mainForm1" editable="true" layout="ResponsiveGridLayout" title="Notification Details" labelSpanXL="4" labelSpanL="4"
+								labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2"
+								columnsL="2" columnsM="1" singleContainerFullSize="false">
+								<f:content>
+									<core:Title text=" "/>
+									<Label text="Notification ID"/>
+									<Text id="idVor" text="{/vor_id}" />
+									<Label text="Issue"/>
+									<Text id="idIssue" text="{/issueType}"/>
+									<Label text="Employee ID"/>
+									<Text id="ID" text="{/empId}" />
+									<Label text="Employee Name"/>
+									<Text id="idName" text="{/eName}"/>
+									<Label text="Truck ID"/>
+									<Text id="idTruckId" text="{/truckId}"/>
+									<Label text="Description"/>
+									<Text id="idDescription" text="{/truckDescr}"/>
+									<Label text="Owner"/>
+									<Text id="idOwner" text="{/category}"/>
+									<Label text="Assignment"/>
+									<Text id="idAssignment" text="{/assignment}"/>
+									<Label text="Plate Number"/>
+									<Text id="idPlateEn" text="{/plateNumber}"/>
+									<Label text="Plate Number Arabic"/>
+									<Text id="idPlateAr" text="{/plateNumberAr}"/>
+									<core:Title text=" "/>
+									<Label text="Driver Sales office"/>
+									<Text id="idSalesOffice" text="{/salesoffice}"/>
+									<Label text="Location"/>
+									<Text id="idLocation" text="{/location}"/>
+									<Label text="Company"/>
+									<Text id="idCompany" text="{/company}"/>
+									<Label text="Cost Center"/>
+									<Text id="idCostCenter" text="{/costcenter}"/>
+									<Label text="Cost Center Description"/>
+									<Text id="idCostCenterDescr" text="{/ccdescription}"/>
+									<Label text="Chasis Number"/>
+									<Text id="idChasis" text="{/chasis}"/>
+									<Label text="Latitude"/>
+									<Input id="idLat" />
+									<Label text="Longitude"/>
+									<Input id="idLong" />
+									<Label text="Problem Type"/>
+									<ComboBox id="CB" items="{ path: '/vorIssueSet', sorter: { path: 'Ztype' } }" selectionChange="onChange">
+									<core:ListItem key="{Ztype}" text="{ZtypeDescr}"/>
+									</ComboBox>
+									<Label text=""/>
+									<Button text="Save Details" press="onSaveHeader"></Button>
+								</f:content>
+							</f:SimpleForm>
+							<f:SimpleForm id="mainForm2" editable="true" layout="ResponsiveGridLayout" title="Attachments" labelSpanXL="4" labelSpanL="4"
+								labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2"
+								columnsL="2" columnsM="1" singleContainerFullSize="false">
+								<f:content>
+									<core:Title text=" "/>
+									<Label text="Attachment 1"/>
+									<u:FileUploader id="idfront1" width="100%" tooltip="Front Picture 1" style="Emphasized"
+										placeholder="Choose a file for Upload..."/>
+								    <Button text="Upload" press="onSaveFront1"></Button>
+									<Label text="Attachment 2"/>
+									<u:FileUploader id="idfront2" width="100%" tooltip="Front Picture 2" style="Emphasized"
+										placeholder="Choose a file for Upload..."/>
+									<Button text="Upload" press="onSaveFront2"></Button>
+									<Label text="Attachment 3"/>
+									<u:FileUploader id="idback1" width="100%" tooltip="Back Picture 1" style="Emphasized"
+										placeholder="Choose a file for Upload..."/>
+									<Button text="Upload" press="onSaveBack1"></Button>
+									<Label text="Attachment 4"/>
+									<u:FileUploader id="idback2" width="100%" tooltip="Back Picture 2" style="Emphasized"
+										placeholder="Choose a file for Upload..."/>
+									<Button text="Upload" press="onSaveBack2"></Button>
+									<Label text="Attachment 5"/>
+									<u:FileUploader id="idRight1" width="100%" tooltip="Right Picture 1" style="Emphasized"
+										placeholder="Choose a file for Upload..."/>
+									<Button text="Upload" press="onSaveRight1"></Button>
+									<Label text="Attachment 6"/>
+									<u:FileUploader id="idRight2" width="100%" tooltip="Right Picture 2" style="Emphasized"
+										placeholder="Choose a file for Upload..."/>	
+									<Button text="Upload" press="onSaveRight2"></Button>
+									<core:Title text=" "/>
+									
+									<Label text="Attachment 7"/>
+									<u:FileUploader id="idLeft1" width="100%" tooltip="Left Picture 1" style="Emphasized"
+										placeholder="Choose a file for Upload..."/>
+									<Button text="Upload" press="onSaveLeft1"></Button>
+									<Label text="Attachment 8"/>
+									<u:FileUploader id="idLeft2" width="100%" tooltip="Left Picture 2" style="Emphasized"
+										placeholder="Choose a file for Upload..."/>	
+									<Button text="Upload" press="onSaveLeft2"></Button>
+								    <Label text="Attachment 9"/>
+									<u:FileUploader id="idAdd1" width="100%" tooltip="additional picture" style="Emphasized"
+										placeholder="Choose a file for Upload..."/>
+									<Button text="Upload" press="onSaveAdd1"></Button>
+									<Label text="Attachment 10"/>
+									<u:FileUploader id="idAdd2" width="100%" tooltip="Additional Picture 2" style="Emphasized"
+										placeholder="Choose a file for Upload..."/>	
+									<Button text="Upload" press="onSaveAdd2"></Button>
+								</f:content>
+							</f:SimpleForm>
+							</VBox>
+					</content>
+					
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
